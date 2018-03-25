@@ -1,0 +1,5 @@
+[requires]
+Catch/latest@signal9/stable
+
+[generators]
+cmake
