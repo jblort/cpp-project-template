@@ -1,5 +1,5 @@
 [requires]
-Catch/latest@signal9/stable
+Catch2/2.2.2@bincrafters/stable
 
 [generators]
 cmake
