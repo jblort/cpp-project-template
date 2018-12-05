@@ -5,6 +5,31 @@ This is a simple project template that uses [CMake](https://cmake.org/), the pac
 
 Its main purpose is to provide a project structure that is ready to go with only minimal adjustments depending on the project itself.
 
+The default structure is configured for building a library, as well as providing an app that uses it.
+
+The folders break down as follows:
+
+```
+project
+├── CMakeLists.txt
+│
+├── apps
+│   ├── CMakeLists.tx
+│   └── main.cpp
+│
+├── include
+│   └── libname 
+│       └── hello_world.h
+├── src
+│   ├── CMakeLists.txt
+│   └── hello_world.cpp
+│
+└── tests
+    ├── CMakeLists.txt
+    ├── example_test.cpp
+    └── main.cpp
+```
+
 ## Setup instructions
 
 This project depends on CMake and Conan, which need to be installed prior to using this template.
@@ -14,8 +39,6 @@ This project depends on CMake and Conan, which need to be installed prior to usi
 The folder structure can be copied and used directly with only a few minor adjustments.
 
 1. Modify the name of the project in the root `CMakeLists.txt`.
-2. Add files to the `src` folder (CMake will warn at setup time that there is none otherwise).
-3. Depending on whether you are building a library or not, you may want to tweak how headers are exported in `src/CMakeLists.txt`.
 
 ## Recommended build instructions
 
