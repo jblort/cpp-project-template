@@ -11,10 +11,6 @@ This project depends on CMake and Conan, which need to be installed prior to usi
 * [CMake installation instructions](https://cmake.org/install/)
 * [Conan installation instructions](http://docs.conan.io/en/latest/installation.html)
 
-Note: If you don't have it already, it's heavily recommended that you add Bincrafters' `public-conan` repository like so:
-
-    conan remote add <REMOTE> https://api.bintray.com/conan/bincrafters/public-conan
-
 The folder structure can be copied and used directly with only a few minor adjustments.
 
 1. Modify the name of the project in the root `CMakeLists.txt`.
