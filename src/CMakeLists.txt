@@ -3,16 +3,28 @@ set(LIBRARY_NAME "${PROJECT_NAME}")
 #Configure paths
 set(LIBRARY_MODULE_PATH  "${PROJECT_SOURCE_DIR}/src")
 set(LIBRARY_SRC_PATH     "${LIBRARY_MODULE_PATH}")
-set(LIBRARY_INCLUDE_PATH "${LIBRARY_MODULE_PATH}")
+set(LIBRARY_PUBLIC_INCLUDE_PATH "${PROJECT_SOURCE_DIR}/include")
+set(LIBRARY_PRIVATE_INCLUDE_PATH "${LIBRARY_MODULE_PATH}")
 
-include_directories(${LIBRARY_INCLUDE_PATH})
+set(LIB_SOURCE_FILES "${LIBRARY_SRC_PATH}/hello_world.cpp")
 
-file(GLOB_RECURSE LIB_HEADER_FILES "${LIBRARY_INCLUDE_PATH}/*.h")
-file(GLOB_RECURSE LIB_SOURCE_FILES "${LIBRARY_SRC_PATH}/*.cpp")
+add_library(${LIBRARY_NAME} ${LIB_SOURCE_FILES})
 
-add_library(${LIBRARY_NAME} STATIC ${LIB_SOURCE_FILES} ${LIB_HEADER_FILES})
+target_include_directories(${LIBRARY_NAME}
+    PUBLIC
+        $<INSTALL_INTERFACE:include>
+        $<BUILD_INTERFACE:${LIBRARY_PUBLIC_INCLUDE_PATH}>
+    PRIVATE
+        ${LIBRARY_MODULE_PATH}
+)
 
-set( LIBRARY_INCLUDE_PATH ${LIBRARY_INCLUDE_PATH} PARENT_SCOPE)
-set( LIBRARY_NAME ${LIBRARY_NAME} PARENT_SCOPE)
+target_compile_features(${LIBRARY_NAME} PRIVATE cxx_std_17)
 
-enable_testing()
+#target_link_libraries(JSONUtils
+#    PUBLIC
+#        CONAN_PKG::PublicLibs # List all libraries needed externally (i.e. part of the lib interface)
+#    PRIVATE
+#        CONAN_PKG::PrivateLibs # List all libraries only needed internally
+#)
+
+set(LIBRARY_NAME ${LIBRARY_NAME} PARENT_SCOPE)

@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.9)
 
-project(<PROJECT_NAME> CXX)
+project("PROJECT_NAME" CXX)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake.modules/")
 
@@ -18,6 +18,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #endif()
 
 add_subdirectory(src)
+add_subdirectory(apps)
 add_subdirectory(tests)
 
 enable_testing()
