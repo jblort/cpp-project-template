@@ -14,7 +14,7 @@ project
 ├── CMakeLists.txt
 │
 ├── apps
-│   ├── CMakeLists.tx
+│   ├── CMakeLists.txt
 │   └── main.cpp
 │
 ├── include
