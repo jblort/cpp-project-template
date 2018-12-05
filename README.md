@@ -17,7 +17,7 @@ The folder structure can be copied and used directly with only a few minor adjus
 2. Add files to the `src` folder (CMake will warn at setup time that there is none otherwise).
 3. Depending on whether you are building a library or not, you may want to tweak how headers are exported in `src/CMakeLists.txt`.
 
-## Build instructions
+## Recommended build instructions
 
 ### Unix/MacOS
 
