@@ -20,7 +20,7 @@ target_include_directories(${LIBRARY_NAME}
 
 target_compile_features(${LIBRARY_NAME} PRIVATE cxx_std_17)
 
-#target_link_libraries(JSONUtils
+#target_link_libraries(${LIBRARY_NAME}
 #    PUBLIC
 #        CONAN_PKG::PublicLibs # List all libraries needed externally (i.e. part of the lib interface)
 #    PRIVATE
