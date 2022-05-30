@@ -5,7 +5,9 @@ project("PROJECT_NAME" CXX)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake.modules/")
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
+#The KEEP_RPATHS is necessary on MacOS to make sure Conan doesn't skip RPATHS when linking
+#against a shared library
+conan_basic_setup(KEEP_RPATHS)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

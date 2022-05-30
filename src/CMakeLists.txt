@@ -8,7 +8,7 @@ set(LIBRARY_PRIVATE_INCLUDE_PATH "${LIBRARY_MODULE_PATH}")
 
 set(LIB_SOURCE_FILES "${LIBRARY_SRC_PATH}/hello_world.cpp")
 
-add_library(${LIBRARY_NAME} ${LIB_SOURCE_FILES})
+add_library(${LIBRARY_NAME} SHARED ${LIB_SOURCE_FILES})
 
 target_include_directories(${LIBRARY_NAME}
     PUBLIC
