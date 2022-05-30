@@ -12,6 +12,7 @@ The folders break down as follows:
 ```
 project
 ├── CMakeLists.txt
+├── conanfile.py
 │
 ├── apps
 │   ├── CMakeLists.txt
@@ -39,6 +40,7 @@ This project depends on CMake and Conan, which need to be installed prior to usi
 The folder structure can be copied and used directly with only a few minor adjustments.
 
 1. Modify the name of the project in the root `CMakeLists.txt`.
+2. Modify the include folder name
 
 ## Recommended build instructions
 
@@ -47,7 +49,7 @@ The folder structure can be copied and used directly with only a few minor adjus
 From the root of the project:
 
 1. `mkdir build && cd build`
-2. `conan install .. && cmake .. && cmake --build .`
+2. `conan install .. && conan build ..`
 3. Run tests with `ctest -V`
 
 ### Windows
