@@ -9,7 +9,7 @@ include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 #against a shared library
 conan_basic_setup(KEEP_RPATHS)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(src)
